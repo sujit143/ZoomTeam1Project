@@ -1,0 +1,240 @@
+<!-- Dashboard design -->
+<p-growl [(value)]="msgs"></p-growl>
+<ul class="nav justify-content-end">
+    <h1 class="header">My Dashboard</h1>
+    <li class="nav-item">
+        <a class="nav-link active" href="#"> <i class="fa fa-users" aria-hidden="true"></i>My Dashboard</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+
+    <li class="nav-item">
+        <a class="nav-link dropdata" href="#"><i class="fa fa-list" aria-hidden="true"></i>Leave/Vacation Management</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+
+    <li class="nav-item">
+        <a class="nav-link dropdata" href="#"><i class="fa fa-book" aria-hidden="true"></i>Holidy List</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+    <li class="nav-item">
+        <a class="nav-link dropdata" href="#"><i class="fa fa-table" aria-hidden="true"></i>Organization Chart</a>
+    </li>
+</ul>
+
+
+
+<div class="container-fluid maincontainer">
+
+
+
+    <div class="first-container">
+
+        <div class="p-grid">
+                    <div class="p-col-3 card-department">
+                            <div class="card">
+                                    <div class="card-body">
+                                        <div class="card-sec">
+                                            <span class="card-one">My Department(S)<br>{{arrdept.name}} </span><br />
+                                            <span class="card-minititle">{{arrdept.description}}</span><br />
+
+                                            <small class="card-paragraph"></small>
+                                        </div>
+                                        <div class="icon">
+                                            <img src="assets/24px.svg">
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+
+
+                    <div class="p-col-3 card-manager">
+
+                            <div class="card">
+
+                                    <div class="card-body">
+                                        <div class="card-sec-one">
+
+                                            <span class="card-one">MY MANAGER</span><br />
+                                            <h1 class="mgr-name">{{arrlogin.reportingManager}}</h1>
+                                            <small class="card-paragraph">Since 4/23/2019, You are reporting to Man Shiv. know more
+                                                about your
+                                                manager.</small>
+                                        </div>
+                                        <div class="icon">
+                                            <img class="height" src="assets/shuffle.svg">
+                                        </div>
+                                    </div>
+                                </div>
+
+                    </div>
+                    <div class="p-col-6 card-table">
+                            <div class="card">
+                                    <div class="card-body">
+                                        <table class="table table-striped" style="margin-top:20px;">
+                                            <thead>
+                                                <tr class="table-head">
+                                                    <th scope="col">Leave / Vacation Type</th>
+                                                    <th scope="col">Requested Date</th>
+                                                    <th scope="col">Applied for</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Sent to
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row" class="leave-type">Earned Leave</th>
+                                                    <td>Aug 25, 2014 </td>
+                                                    <td>Sept 7, 2014 </td>
+                                                    <td>Pending</td>
+                                                    <td>Othon Mourkakos</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="leave-type">Sick Leave</th>
+                                                    <td>Jul 14, 2013 </td>
+                                                    <td>Jul 27, 2013 </td>
+                                                    <td>Approved</td>
+                                                    <td>Othon Mourkakos</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row" class="leave-type">Sick Leave</th>
+                                                    <td>Jan 1, 2013 </td>
+                                                    <td>Jan 1, 2013 </td>
+                                                    <td>Approved</td>
+                                                    <td>Othon Mourkakos</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+
+
+                                    </div>
+                                </div>
+
+                    </div>
+                </div>
+
+
+        </div>
+
+
+    <!-- ////////expansion pannel -->
+
+    <div class="expansion">
+
+        <p>
+            <mat-expansion-panel [(expanded)]="xpandStatus">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <h2 class="ptitle">Personal Information</h2>
+                    </mat-panel-title>
+                    <mat-panel-description> </mat-panel-description>
+                </mat-expansion-panel-header>
+                <!-- Two-way binding on the expanded attribute gives us a way to store and manipulate the expansion status. -->
+                <div class="panel-body" style="display: block;">
+
+                    <div class=" container-fluid">
+                        <table class="table table-striped table-hover">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div><label class="formlabel">Firstname</label><br><span class="data">{{arrlogin.firstName}}</span></div>
+                                    </td>
+
+                                    <td>
+                                        <div><label class="formlabel">Lastname</label><br><span class="data">{{arrlogin.lastName}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">DOB</label><br><span class="data">{{arrlogin.dob}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Gender</label><br><span class="data">{{arrlogin.gender}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">DOJ</label><br><span class="data">{{arrlogin.doj}}</span></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div><label class="formlabel">Address1</label><br><span class="data">{{arrlogin.address}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Address2</label><br><span class="data">{{arrlogin.address}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">City</label><br><span class="data">{{arrlogin.city}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">State</label><br><span class="data">{{arrlogin.state}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Country</label><br><span class="data">{{arrlogin.country}}</span></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div><label class="formlabel">Race</label><br><span class="data">{{arrlogin.race}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Ethnicity</label><br><span class="data">{{arrlogin.ethnicity}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Marital
+                                                Status</label><br><span class="data">{{arrlogin.maritalStatus}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Language</label><br><span class="data">{{arrlogin.language}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">SSN</label><br><span class="data">{{arrlogin.ssn}}</span></div>
+                                    </td>
+
+
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>
+                                        <div><label class="formlabel">Email</label><br><span class="data">{{arrlogin.email}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Cell Phone</label><br><span class="data">{{arrlogin.cell}}</span></div>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div><label class="formlabel">Home Phone</label><br><span class="data">{{arrlogin.homePhone}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Work Phone</label><br><span class="data">{{arrlogin.workPhone}}</span></div>
+                                    </td>
+                                    <td>
+                                        <div><label class="formlabel">Extension</label><br><span class="data">{{arrlogin.workPhoneExt}}</span>
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+            </mat-expansion-panel>
+        </p>
+
+    </div>
+</div>

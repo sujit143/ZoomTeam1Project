@@ -1,0 +1,481 @@
+<!-- <p-growl [(value)]="msgs"></p-growl> -->
+<div class="col-md-12">
+    <ul class="nav justify-content-end items">
+
+        <h1 class="header">Manage Users</h1>
+        <li class="nav-item">
+
+            <div class="dropdown-show">
+                <button class="btn btn-default dropdown-toggle flipInX" type="button" data-toggle="dropdown"
+                    data-hover="dropdown" data-animations="flipInX fadeInLeft fadeInUp fadeInRight">
+                    <i class="fa fa-file-o"></i> Manage Organizations & Users <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a routerLink='/doc'>All Documents</a></li>
+                    <li><a routerLink="/design">Designations</a></li>
+                    <li><a routerLink="/dept">Department</a></li>
+
+                    <li><a routerLink="/org">Organizations</a></li>
+                    <li><a routerLink="/Users">Users</a></li>
+                </ul>
+            </div>
+
+        </li>
+
+
+
+
+
+
+        <!-- <div class="vertical">
+
+            </div> -->
+
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-plus"></i>Create Project</a>
+        </li>
+        <!-- <div class="vertical">
+
+            </div> -->
+
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>Time Sheets</a>
+        </li>
+        <!-- <div class="vertical">
+
+            </div> -->
+        <li class="nav-item">
+            <a class="nav-link " href="#"><i class="fa fa-edit" aria-hidden="true"></i>Edit Projects</a>
+        </li>
+    </ul>
+</div>
+
+<!-- <p-growl [(value)]="msgs"></p-growl> -->
+<div class="col-md-12">
+    <div class="main-container container-fluid">
+        <div class="data-container zoomIn">
+            <span class="doctype"></span>
+
+            <button class="btn btn-lg btn-warning text-white float-right" data-toggle="modal"
+                data-target="#largeModal">Add Member</button>
+
+            <table class='table table-striped table-sm table-responsive-sm table-hover'>
+                <thead class='table-title'>
+
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Display Name</th>
+                    <th>Gender</th>
+                    <th>DOB</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Email</th>
+                    <th>Supervisor</th>
+
+
+
+
+
+
+
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of arrUser; let i=index">
+                        <!-- <td>{{i+1}}</td> -->
+                        <td>{{item.firstName}}</td>
+                        <td>{{item.lastName}}</td>
+                        <td>{{item.displayName}}</td>
+                        <td>{{item.gender}}</td>
+                        <td>{{item.dob}}</td>
+                        <td>{{item.address}}</td>
+                        <td>{{item.city}}</td>
+                        <td>{{item.state}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.supervisor}}</td>
+                        <td>
+                            <!-- <a class="btnedit" (click)="openEdit(kiran,'Edit',i,item)">Edit</a> |
+                                <a class="btndel" (click)="confirmDelete(item.id)">Delete</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+<!-- table -->
+
+
+
+
+
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg bounceInRight">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Add/Edit Organization</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active navbarText" id="nav-home-tab" data-toggle="tab"
+                            href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Profile</a>
+                        <a class="nav-item nav-link navbarText" id="nav-profile-tab" data-toggle="tab"
+                            href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Work
+                            Info</a>
+                        <a class="nav-item nav-link navbarText" id="nav-contact-tab" data-toggle="tab"
+                            href="#nav-contact" role="tab" aria-controls="nav-contact"
+                            aria-selected="false">Documents</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                        <div class="form-row">
+                            <div class="form-group col-md-6" style="border-right: 6px solid #eaeaea;">
+                                <h2>Personal Info</h2>
+                                <hr>
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">First Name<span class="required">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="First Name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Middle Name<span
+                                            class="required">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="Middle Name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Last Name<span class="required">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="Last Name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Email<span class="required">*</span></label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Gender<span class="required">*</span></label>
+                                    <div class="col-sm-10">
+
+                                        <!-- Default inline 1-->
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input">
+                                            <label class="custom-control-label" for="defaultInline1">Male</label>
+                                        </div>
+
+                                        <!-- Default inline 2-->
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input">
+                                            <label class="custom-control-label" for="defaultInline2">Female</label>
+                                        </div>
+
+                                        <!-- Default inline 3-->
+                                        <div class="custom-control custom-radio custom-control-inline">
+                                            <input type="radio" class="custom-control-input">
+                                            <label class="custom-control-label" for="defaultInline3">Other</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Date Of Birth<span
+                                            class="required">*</span></label>
+                                    <div class="col-sm-5">
+                                        <input type="date" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Maritial Status</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Marital Status">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Race</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Race">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Ethnicity</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Ethnicity">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Religion</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Religion">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <div class="form-group col-md-6">
+                                <h2>Contact Info</h2>
+                                <hr>
+
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Address</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="Address">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Address2</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="Address2">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">City</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="City">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">State</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" placeholder="State">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Postal Code</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Postal Code">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Cell</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Cell">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Work Phone</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Work Phone">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" class="form-control" placeholder="Ext">
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Country</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Country">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">SSN/Govt.ID</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="SSN / Govt.ID">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="name" class="col-sm-2">Language</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" placeholder="Language">
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="col-md-12">
+                                <button type="submit" class="btn-submit">Save Personal Info</button>
+                            </div>
+                        </div>
+
+                       </div>
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        <h2>Work Info</h2>
+                        <hr>
+
+
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2">Organization</label>
+                            <div class="col-sm-10">
+                                <select class="input-md form-control chosen-select" data-val="true"
+                                    data-val-number="The field OrganizationId must be a number." id="ddlMemOrg"
+                                    name="MemberWorkInfo.OrganizationId">
+                                    <option value="">Select</option>
+                                    <option value="1">Skycliff IT Pvt. Ltd.</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2">Location</label>
+                            <div class="col-sm-10">
+
+
+                                <select class="input-md form-control chosen-select" data-val="true"
+                                    data-val-number="The field LocationId must be a number." id="ddlMemLocation"
+                                    name="MemberWorkInfo.LocationId">
+                                    <option value="">Select</option>
+                                    <option value="1">Bangalore</option>
+                                    <option value="2">Hubli-Dharwad</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2">Department</label>
+                            <div class="col-sm-10">
+                                <select class="input-md form-control chosen-select" data-val="true"
+                                    data-val-number="The field DepartmentId must be a number." id="ddlMemDepartment"
+                                    name="MemberWorkInfo.DepartmentId">
+                                    <option value="">Select</option>
+                                    <option value="1">Yourdrs - Web Development</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2">Designation</label>
+                            <div class="col-sm-10">
+                                <select class="input-md form-control chosen-select" data-val="true"
+                                    data-val-number="The field DepartmentId must be a number." id="ddlMemDepartment"
+                                    name="MemberWorkInfo.DepartmentId">
+                                    <option value="">Select</option>
+                                    <option value="1">Software Engineer</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2">Roles</label>
+                            <div class="col-sm-5">
+                                <select class="input-md form-control chosen-select" data-val="true"
+                                    data-val-number="The field DepartmentId must be a number." id="ddlMemDepartment"
+                                    name="MemberWorkInfo.DepartmentId">
+                                    <option value="">Select</option>
+                                    <option value="1">Admin</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2">Date Of Joining</label>
+                            <div class="col-sm-5">
+                                <input type="date" class="form-control" id="inputEmail3" placeholder="">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2">Supervisor/Manager</label>
+                            <div class="col-sm-5">
+                                <select class="input-md form-control chosen-select" data-val="true"
+                                    data-val-number="The field DepartmentId must be a number." id="ddlMemDepartment"
+                                    name="MemberWorkInfo.DepartmentId">
+                                    <option value="">Select</option>
+                                    <option value="1">Admin Manju</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" class="btn-submit">Save Work Info</button>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+                        <div class="form-group row document">
+                            <label for="name" class="col-sm-2">Document Type</label>
+                            <div class="col-sm-10">
+                                <select class="input-md form-control chosen-select" data-val="true"
+                                    data-val-number="The field DepartmentId must be a number." id="ddlMemDepartment"
+                                    name="MemberWorkInfo.DepartmentId">
+                                    <option value="">Select</option>
+                                    <option value="1">Personal</option>
+
+                                </select>
+
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 file-drop">
+
+
+                            <div class="file-upload-wrapper">
+                                <div class="card card-body view file-upload">
+                                    <div class="card-text file-upload-message"><i class="fa fa-cloud-upload"></i>
+                                        <p>Drag and drop a file here or click</p>
+                                        <!-- <p class="file-upload-error">Ooops, something wrong happended.</p> -->
+                                    </div>
+                                    <div class="mask rgba-stylish-slight"></div>
+                                    <div class="file-upload-errors-container">
+                                        <ul></ul>
+                                    </div><input type="file" id="input-file-now" class="file_upload"><button
+                                        type="button" class="btn btn-sm btn-danger waves-effect waves-light">Remove<i
+                                            class="far fa-trash-alt ml-1"></i></button>
+                                    <div class="file-upload-preview"><span class="file-upload-render"></span>
+                                        <div class="file-upload-infos">
+                                            <div class="file-upload-infos-inner">
+                                                <p class="file-upload-filename"><span
+                                                        class="file-upload-filename-inner"></span></p>
+                                                <p class="file-upload-infos-message">Drag and drop or click to replace
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

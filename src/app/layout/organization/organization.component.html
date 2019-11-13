@@ -1,0 +1,223 @@
+<div class="col-md-12">
+    <ul class="nav justify-content-end items">
+
+        <h1 class="header">Manage Organization</h1>
+        <li class="nav-item">
+
+            <div class="dropdown-show">
+                <button class="btn btn-default dropdown-toggle flipInX" type="button" data-toggle="dropdown"
+                    data-hover="dropdown" data-animations="flipInX fadeInLeft fadeInUp fadeInRight">
+                    <i class="fa fa-file-o"></i> Manage Organizations & Users <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li></li><a routerLink='/doc'>Document Type</a>
+                    <li><a  routerLink="/design">Designations</a></li>
+                    <li><a routerLink="/dept">Department</a></li>
+                    <li><a routerLink="/loc">Locations</a></li>
+                    <li><a routerLink="/org">Organizations</a></li>
+                    <li><a routerLink="/Users">Users</a></li>
+                </ul>
+            </div>
+
+        </li>
+
+
+
+
+
+
+        <!-- <div class="vertical">
+
+        </div> -->
+
+        <li class="nav-item">
+            <a class="nav-link dropdata" href="#"><i class="fa fa-plus"></i>Create Project</a>
+        </li>
+        <!-- <div class="vertical">
+
+        </div> -->
+
+        <li class="nav-item">
+            <a class="nav-link dropdata" href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>Time Sheets</a>
+        </li>
+        <!-- <div class="vertical">
+
+        </div> -->
+        <li class="nav-item">
+            <a class="nav-link dropdata" href="#"><i class="fa fa-edit" aria-hidden="true"></i>Edit Projects</a>
+        </li>
+    </ul>
+</div>
+
+<!-- <p-growl [(value)]="msgs"></p-growl> -->
+<div class="col-md-12">
+    <div class="main-container container-fluid">
+        <div class="data-container zoomIn">
+            <span class="doctype">Organizations</span>
+
+
+
+            <button class="organisation" data-toggle="modal" data-target="#largeModal">Add/Edit Organization</button>
+
+            <table class='table table-striped table-sm table-responsive-sm table-hover'>
+
+                <tbody>
+                    <tr>
+                        <td colspan="6" class="tpad">
+                            <div><label class="formlabel">Name</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="tpad">
+                            <div><label class="formlabel">Description</label><br><span class="ldata"> praveen</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tpad">
+                            <div><label class="formlabel">Registered Address 1</label><br><span class="ldata">
+                                    praveen</span></div>
+                        </td>
+                        <td class="tpad">
+                            <div><label class="formlabel">Registered Address 2</label><br><span class="ldata">
+                                    praveen</span></div>
+                        </td>
+                        <td class="tpad">
+                            <div><label class="formlabel">City</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                        <td class="tpad">
+                            <div><label class="formlabel">State</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tpad">
+                            <div><label class="formlabel">Zip</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                        <td class="tpad">
+                            <div><label class="formlabel">Country</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                        <td class="tpad">
+                            <div><label class="formlabel">Phone 1</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                        <td class="tpad">
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tpad">
+                            <div><label class="formlabel">Phone 2</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                        <td class="tpad">
+                            <div><label class="formlabel">Website</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                        <td class="tpad">
+                            <div><label class="formlabel">Fax</label><br><span class="ldata"> praveen</span></div>
+                        </td>
+                        <td class="tpad">
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="row mb-4">
+
+</div>
+<div class="modal fade" id="largeModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg bounceInRight">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Add/Edit Organization</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+
+                            <label for="inputEmail4">Organization Name</label>
+                            <input type="email" class="form-control" id="inputEmail4" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Description</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Description">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputAddress">Registered Address 1</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Address 1">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputAddress">Registered Address 2</label>
+                            <input type="text" class="form-control" id="inputAddress_2" placeholder="Address 2">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputAddress">City</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="City">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputAddress2">State</label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="State">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputAddress2">Zip Code</label>
+                            <input type="text" class="form-control" id="inputAddresszip" placeholder="Zip Code">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputAddress2">Country</label>
+                            <input type="text" class="form-control" id="inputAddresscntry" placeholder="Country">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">Website</label>
+                            <input type="text" class="form-control" id="inputwebsite" placeholder="Website Address">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">phone 1</label>
+                            <!-- <select id="inputState" class="form-control">
+                                      <option selected>Choose...</option>
+                                      <option>...</option>
+                                    </select> -->
+                            <input type="text" class="form-control" id="inputphone1" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputCity">phone 2</label>
+                            <input type="text" class="form-control" id="inputphone2" placeholder="Alternate Phone Number">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputZip">Fax</label>
+                            <input type="text" class="form-control" id="inputfax" placeholder="Fax">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" id="inputZip">
+                        </div>
+                    </div>
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+            </div>
+        </div>
+    </div>
+</div>
